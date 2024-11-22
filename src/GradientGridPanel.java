@@ -80,15 +80,39 @@ public class GradientGridPanel extends JPanel
     public boolean confirmGridMeetsSpecifications()
     {
         // suggested variable to track whether you have duplicate numbers in the grid. This defaults to all falses.
-        boolean[] used = new boolean[GRID_SIZE * GRID_SIZE];
-        for(int i = 0; i<GRID_SIZE*GRID_SIZE; i++)
-        {
-
-        }
-
         //TODO: you write this method.
+        boolean repeat = noDuplicates();
+        boolean order = surroundingNumbersOrder();
+        return repeat && order;
+
+
+    }
+    boolean noDuplicates()
+    {
+        boolean[] used = new boolean[GRID_SIZE * GRID_SIZE];
+
+        for (int r = 0; r < GRID_SIZE; r++)
+        {
+            for (int c = 0; c < GRID_SIZE; c++)
+            {
+                if (used[myGrid[r][c]] == false)
+                    used[myGrid[r][c]] = true;
+                else
+                    return false;
+            }
+        }
+        return true;
+    }
+
+    boolean surroundingNumbersOrder()
+    {
+
         return false;
     }
+
+
+
+
 
     /**
      * based on which mode is active, update the values stored in myGrid.
