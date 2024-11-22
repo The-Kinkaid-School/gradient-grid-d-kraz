@@ -81,6 +81,10 @@ public class GradientGridPanel extends JPanel
     {
         // suggested variable to track whether you have duplicate numbers in the grid. This defaults to all falses.
         boolean[] used = new boolean[GRID_SIZE * GRID_SIZE];
+        for(int i = 0; i<GRID_SIZE*GRID_SIZE; i++)
+        {
+
+        }
 
         //TODO: you write this method.
         return false;
