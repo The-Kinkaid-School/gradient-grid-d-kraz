@@ -95,7 +95,7 @@ public class GradientGridPanel extends JPanel
         {
             for (int c = 0; c < GRID_SIZE; c++)
             {
-                if (used[myGrid[r][c]] == false)
+                if (!used[myGrid[r][c]])
                     used[myGrid[r][c]] = true;
                 else
                     return false;
@@ -106,7 +106,67 @@ public class GradientGridPanel extends JPanel
 
     boolean surroundingNumbersOrder()
     {
+        int r = 0;
+        int c = 0;
+        for (int i=0; i<GRID_SIZE*GRID_SIZE; i++)
+        {
+            if (r == 0 && c ==0)
+            {
+                if(myGrid[r][c]==(myGrid[r+1][c]-1))
+                {
+                    r = r + 1;
+                    break;
+                }
+                else if(myGrid[r][c]==(myGrid[r+1][c+1]-1))
+                {
+                    r = r + 1;
+                    c=c+1;
+                    break;
+                }
+                else if(myGrid[r][c]==(myGrid[r][c+1]-1))
+                {
+                    c = c + 1;
+                    break;
+                }
+                else
+                    return false;
+            }
 
+            if (r == 0 && c != 0)
+            {
+                if(myGrid[r][c]==(myGrid[r+1][c]-1))
+                {
+                    r = r + 1;
+                    break;
+                }
+                else if(myGrid[r][c]==(myGrid[r+1][c-1]-1))
+                {
+                    r = r + 1;
+                    c = c-1;
+                    break;
+                }
+                else if(myGrid[r][c]==(myGrid[r+1][c+1]-1))
+                {
+                    r = r + 1;
+                    c=c+1;
+                    break;
+                }
+                else if(myGrid[r][c]==(myGrid[r][c+1]-1))
+                {
+                    c = c + 1;
+                    break;
+                }
+                else if(myGrid[r][c]==(myGrid[r][c-1]-1))
+                {
+                    c = c - 1;
+                    break;
+                }
+                else
+                    return false;
+            }
+            System.out.println(STR."r=\{r}, c=\{c}");
+
+        }
         return false;
     }
 
