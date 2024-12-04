@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4a23e66c-010e-40e6-b64b-1f45d21b353d" name="Changes" comment="Trying to figure out a way to check if the surrounding numbers are in order">
+    <list default="true" id="4a23e66c-010e-40e6-b64b-1f45d21b353d" name="Changes" comment="Realized the way I was doing the check was not the most effient and functional. Decided to change it by making another method that checks if in bounds and going by coordinate rather than number.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GradientGridPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GradientGridPanel.java" afterDir="false" />
     </list>
@@ -103,13 +103,22 @@
       <option name="project" value="LOCAL" />
       <updated>1733161757463</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Realized the way I was doing the check was not the most effient and functional. Decided to change it by making another method that checks if in bounds and going by coordinate rather than number.">
+      <option name="closed" value="true" />
+      <created>1733332023977</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1733332023977</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Started making a for loop that would check if any numbers repeat" />
     <MESSAGE value="Finished the boolean that checks if there are any repeats and split the confirmSpecification boolean into three for better organization" />
     <MESSAGE value="Trying to figure out a way to check if the surrounding numbers are in order" />
-    <option name="LAST_COMMIT_MESSAGE" value="Trying to figure out a way to check if the surrounding numbers are in order" />
+    <MESSAGE value="Realized the way I was doing the check was not the most effient and functional. Decided to change it by making another method that checks if in bounds and going by coordinate rather than number." />
+    <option name="LAST_COMMIT_MESSAGE" value="Realized the way I was doing the check was not the most effient and functional. Decided to change it by making another method that checks if in bounds and going by coordinate rather than number." />
   </component>
 </project>

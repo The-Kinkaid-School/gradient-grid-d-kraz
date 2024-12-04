@@ -83,7 +83,11 @@ public class GradientGridPanel extends JPanel
         //TODO: you write this method.
         boolean repeat = noDuplicates();
         boolean order = surroundingNumbersOrder();
+        System.out.println(repeat);
+        System.out.println(order);
+
         return repeat && order;
+
 
 
     }
@@ -106,16 +110,8 @@ public class GradientGridPanel extends JPanel
 
     boolean isInBounds(int r, int c)
     {
-        if(r > 15)
-            return false;
-        if(r < 0)
-            return false;
-        if(c>15)
-            return false;
-        if(c<0)
-            return false;
-        else
-            return true;
+        return r <= 15 && r >= 0 && c <= 15 && c >= 0;
+
     }
 
     boolean surroundingNumbersOrder()
@@ -141,8 +137,13 @@ public class GradientGridPanel extends JPanel
                     continue;
                 if (isInBounds(r, c-1) && x+1==myGrid[r][c-1])
                     continue;
+                if (x==255)
+                    continue;
                 else
+                {
+                    System.out.println(STR."Number that does not contain neighbors one larger than it: \{x}");
                     return false;
+                }
 
             }
         }
