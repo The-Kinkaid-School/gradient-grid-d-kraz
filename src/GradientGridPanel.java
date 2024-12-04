@@ -104,70 +104,49 @@ public class GradientGridPanel extends JPanel
         return true;
     }
 
+    boolean isInBounds(int r, int c)
+    {
+        if(r > 15)
+            return false;
+        if(r < 0)
+            return false;
+        if(c>15)
+            return false;
+        if(c<0)
+            return false;
+        else
+            return true;
+    }
+
     boolean surroundingNumbersOrder()
     {
-        int r = 0;
-        int c = 0;
-        for (int i=0; i<GRID_SIZE*GRID_SIZE; i++)
+        for (int r=0; r<GRID_SIZE; r++)
         {
-            if (r == 0 && c ==0)
+            for(int c=0; c<GRID_SIZE; c++)
             {
-                if(myGrid[r][c]==(myGrid[r+1][c]-1))
-                {
-                    r = r + 1;
-                    break;
-                }
-                else if(myGrid[r][c]==(myGrid[r+1][c+1]-1))
-                {
-                    r = r + 1;
-                    c=c+1;
-                    break;
-                }
-                else if(myGrid[r][c]==(myGrid[r][c+1]-1))
-                {
-                    c = c + 1;
-                    break;
-                }
+                int x = myGrid[r][c];
+                if (isInBounds(r + 1, c) && x+1==myGrid[r+1][c])
+                    continue;
+                if (isInBounds(r -1, c) && x+1==myGrid[r-1][c])
+                    continue;
+                if (isInBounds(r +1, c+1) && x+1==myGrid[r+1][c+1])
+                    continue;
+                if (isInBounds(r + 1, c - 1) && x+1==myGrid[r+1][c -1])
+                    continue;
+                if (isInBounds(r - 1, c +1) && x+1==myGrid[r-1][c+1])
+                    continue;
+                if (isInBounds(r - 1, c-1) && x+1==myGrid[r-1][c-1])
+                    continue;
+                if (isInBounds(r, c+1) && x+1==myGrid[r][c+1])
+                    continue;
+                if (isInBounds(r, c-1) && x+1==myGrid[r][c-1])
+                    continue;
                 else
                     return false;
-            }
 
-            if (r == 0 && c != 0)
-            {
-                if(myGrid[r][c]==(myGrid[r+1][c]-1))
-                {
-                    r = r + 1;
-                    break;
-                }
-                else if(myGrid[r][c]==(myGrid[r+1][c-1]-1))
-                {
-                    r = r + 1;
-                    c = c-1;
-                    break;
-                }
-                else if(myGrid[r][c]==(myGrid[r+1][c+1]-1))
-                {
-                    r = r + 1;
-                    c=c+1;
-                    break;
-                }
-                else if(myGrid[r][c]==(myGrid[r][c+1]-1))
-                {
-                    c = c + 1;
-                    break;
-                }
-                else if(myGrid[r][c]==(myGrid[r][c-1]-1))
-                {
-                    c = c - 1;
-                    break;
-                }
-                else
-                    return false;
             }
-            System.out.println(STR."r=\{r}, c=\{c}");
-
         }
-        return false;
+        return true;
     }
 
 
