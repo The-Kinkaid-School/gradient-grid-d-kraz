@@ -201,7 +201,7 @@ public class GradientGridPanel extends JPanel
 
             if(r%2!=0)
             {
-                for (int c=GRID_SIZE-1; c>-1; c--)
+                for (int c=GRID_SIZE-1; c>=0; c--)
                 {
                     myGrid[r][c]=counter;
                     counter++;
