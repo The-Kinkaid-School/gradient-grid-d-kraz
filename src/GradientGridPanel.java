@@ -173,6 +173,7 @@ public class GradientGridPanel extends JPanel
                 break;
             case 3:
                 // TODO write code for case 2, either here or in its own method.
+                makeDanielGoodExample1();
                 break;
             case 4:
                 // TODO write code for case 3, either here or in its own method.
@@ -184,6 +185,30 @@ public class GradientGridPanel extends JPanel
     /**
      * an example of a loop structure that fills in all the cells but does not meet the criteria.
      */
+    private void makeDanielGoodExample1()
+    {
+        int counter = 0;
+        for (int r=0; r<GRID_SIZE;r++)
+        {
+            if(r%2==0)
+            {
+                for(int c=0; c<GRID_SIZE; c++)
+                {
+                    myGrid[r][c]=counter;
+                    counter++;
+                }
+            }
+
+            if(r%2!=0)
+            {
+                for (int c=GRID_SIZE-1; c>-1; c--)
+                {
+                    myGrid[r][c]=counter;
+                    counter++;
+                }
+            }
+        }
+    }
     private void makeBadExample()
     {
         int counter = 0;
